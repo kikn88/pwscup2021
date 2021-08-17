@@ -22,10 +22,10 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
 
 ### Dataset Generation
 
-- `activ_diabet6_csv.py`: 
+- `activ_diabet9_csv.py`: 
 
   ```
-  python activ_diabet6_csv.py B.csv
+  python activ_diabet9_csv.py B.csv
   ```
 
   HNANESのXPTファイルをダウンロードして，SEQNで束ねて必要な列のみを抽出し，平均活動量METsなどを算出して， B.csv を出力する．
