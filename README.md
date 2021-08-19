@@ -8,8 +8,9 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
 
 ### Requirement
 
-- Python 3.6
-- Numpy, pandas 
+- Python 3.6 
+- Numpy
+- pandas 1.1.5
 - statsmodels v0.12.2
 
 ## Data
@@ -22,10 +23,10 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
 
 ### Dataset Generation
 
-- `activ_diabet6_csv.py`: 
+- `activ_diabet9_csv.py`: 
 
   ```
-  python activ_diabet6_csv.py B.csv
+  python activ_diabet9_csv.py B.csv
   ```
 
   HNANESのXPTファイルをダウンロードして，SEQNで束ねて必要な列のみを抽出し，平均活動量METsなどを算出して， B.csv を出力する．
@@ -218,7 +219,24 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
   | max  | 69    | 0.020 | 0.309 | 0.061 | 0.159  | 0.006 |
   | mean | 2.530 | 0.001 | 0.031 | 0.017 | 0.028  | 8E-05 |
 
+- Iloss.py Information Loss
+
+  iloss.py C.csv D.csv
   
+	有用性評価．CとDの，行を対応させたL1距離の最大値を評価する．(Max列のMax行の値)
+  
+
+  
+	
+  
+  
+	|      | 1    | 5    | cat  | Max  |
+  | ---- | ---- | ---- | ---- | ---- |
+  |mean |1.085297| 0.723084| 0.443483| 1.085297|
+	|max  |8.000000| 4.400000| 4.000000| 8.000000|
+
+
+
 
 ### 安全性評価 Privacy Metrics 
 - `lmark.py`　**L**inkage bench**mark** 
@@ -239,8 +257,8 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
 - `uniqrt.py`　**Uniq**ue Rate 
 
   ```
-  uniqrt.py  C.csv
-  例) uniqrt.py Csv/c-in.csv
+  uniqrt.py  B.csv C.csv
+  例) uniqrt.py CSV/B.csv Csv/c-in.csv
   ```
 
   第一匿名化（特異な行の削除）されたデータC.csvの中の，一意な行の割合を評価する．ただし，連続値(age, bmi)については，10の位で丸めた値を用いて評価する．
@@ -251,7 +269,7 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
   \end{eqnarray}
   $$
   
-  $|B| = 4190$ はコード埋め込みなので注意．
+  
   
 
 ### フォーマットチェッカー
@@ -361,9 +379,11 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
 
 6. Test-5check.sh 提出ファイル(D, X, E)のフォーマット検査を行なう．全てにOK が出れば良い．
 
+### FAQ
+
+[PWS Cup 2021 FAQ](FAQ.md)
 
 
-Github 難しい
 
 Aug. 17, 2021 update
 

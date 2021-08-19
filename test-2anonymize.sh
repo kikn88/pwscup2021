@@ -20,3 +20,7 @@ pytest rr.py $C  0.9 $Csv/d-xrr2.csv  0_2_3_4_6_7_10
 pytest dp2.py $Csv/d-xrr2.csv 1_5 1.0_2.0 $D
 pytest umark.py $B $D
 
+pytest iloss.py $C $D
+
+#pytest umark.py $B $C
+
