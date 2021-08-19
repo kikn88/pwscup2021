@@ -223,17 +223,14 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
 
   iloss.py C.csv D.csv
   
-	有用性評価．CとDの，行を対応させたL1距離の最大値を評価する．(Max列のMax行の値)
-  
+有用性評価．CとDの，行を対応させたL1距離の最大値を評価する．(Max列のMax行の値)
+  例）
 
   
-	
-  
-  
-	|      | 1    | 5    | cat  | Max  |
+|      | 1    | 5    | cat  | Max  |
   | ---- | ---- | ---- | ---- | ---- |
   |mean |1.085297| 0.723084| 0.443483| 1.085297|
-	|max  |8.000000| 4.400000| 4.000000| 8.000000|
+|max  |8.000000| 4.400000| 4.000000| 8.000000|
 
 
 
@@ -250,7 +247,9 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
   $$
   recall = \frac{|E_a \cap E|}{|E_a|}, \, prec = \frac{|E_a \cap E|}{|E|}, top_k = \frac{|\{x \in E_a| x \in E[x]\}|}{k}
   $$
-  ここで，E_a とEは`Ea.csv` と`E.csv` の中の正の行番号(＝排除されていない行）からなる集合とする．$E[x]$​ は行xに対応する推測行番号の上位k位までの集合．
+  ここで，E_a とEは`Ea.csv` と`E.csv` の中の正の行番号(＝排除されていない行）からなる集合とする．$E[x]$​​ は行xに対応する推測行番号の上位k位までの集合．
+  
+  
 
 ### 安全性評価 Unique Rate 
 
@@ -279,7 +278,7 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
 
   ```
   checkDX.py B.csv D.csv X.csv
-  例）python3 checkDX.py Csv/d-xrrdp.csv Csv/e-x.csv 
+  例）python3 checkDX.py Csv/B.csv Csv/d-xrrdp.csv Csv/e-x.csv 
   D: num OK
   D: obj OK
   0 OK
@@ -315,8 +314,8 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
 
   ```
   checkE.py B.csv E.csv
-  例） python3 checkE.py Csv/B.csv Csv/e-xrrdp.csv
-  (100, 1) Invalid
+  例） python3 checkE.py Csv/B.csv Csv/pre_attack_00_from_00.csv
+  (100, 3) OK
   E: int OK
   E: max OK
   E: min OK
