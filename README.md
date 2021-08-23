@@ -29,13 +29,13 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
   python activ_diabet9_csv.py B.csv
   ```
 
-  HNANESのXPTファイルをダウンロードして，SEQNで束ねて必要な列のみを抽出し，平均活動量METsなどを算出して， B.csv を出力する．
+  HNANESのXPTファイルをダウンロードして，SEQNで束ねて必要な列のみを抽出し，平均活動量METsなどを算出して， B.csv を出力する．(gh, metsはデータ生成過程で利用されたが，コンテストで使わないため0でクリアされている)
 
   | gen  | age  | race  | edu        | mar      | bmi  | dep  | pir  | gh   | mets | qm   | dia  |
   | ---- | ---- | ----- | ---------- | -------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-  | Male | 62   | White | Graduate   | Married  | 27.8 | 0    | 0    | 7    | 920  | Q2   | 1    |
-  | Male | 53   | White | HighSchool | Divorced | 30.8 | 0    | 1    | 5.5  | 0    | Q1   | 0    |
-  | Male | 78   | White | HighSchool | Married  | 28.8 | 0    | 0    | 5.8  | 3840 | Q3   | 1    |
+  | Male | 62   | White | Graduate   | Married  | 27.8 | 0    | 0    | 0    | 0    | Q2   | 1    |
+  | Male | 53   | White | HighSchool | Divorced | 30.8 | 0    | 1    | 0    | 0    | Q1   | 0    |
+  | Male | 78   | White | HighSchool | Married  | 28.8 | 0    | 0    | 0    | 0    | Q3   | 1    |
 
   
 
@@ -264,7 +264,7 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
   第一匿名化（特異な行の削除）されたデータC.csvの中の，一意な行の割合を評価する．ただし，連続値(age, bmi)については，10の位で丸めた値を用いて評価する．
   $$
   \begin{eqnarray}
-  unique_1(C) &=& \frac{|\{c_i \in C| \forall c_j \in C-\{c_i\}, c_i \ne c_j\}|}{|C|} \\
+  %unique_1(C) &=& \frac{|\{c_i \in C| \forall c_j \in C-\{c_i\}, c_i \ne c_j\}|}{|C|} \\
   unique_2(C) &=& \frac{|\{c_i \in C| \forall c_j \in C-\{c_i\}, c_i \ne c_j\}|}{|B|} \\
   \end{eqnarray}
   $$
@@ -386,6 +386,12 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
 
 
 Aug. 17, 2021 update
+
+Aug. 19, 2021 update (Iloss指標)
+
+Aug. 23, 2021 update (表記の訂正)
+
+
 
 
 
