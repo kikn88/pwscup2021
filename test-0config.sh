@@ -1,7 +1,7 @@
 #!/bin/bash
 
-Team=00
-You=00
+Team=00		# 自分のチーム番号
+You=00		# 攻撃先のチーム番号
 python=python3
 Csv=Csv
 B=$Csv/B.csv
