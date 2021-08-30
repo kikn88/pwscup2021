@@ -25,7 +25,7 @@ if __name__ == "__main__":
     dfX = pd.read_csv(sys.argv[3], header=None)
     n = dfB.shape[0]
     
-    print('D: num',  'OK' if dfD.dtypes[[1,5,6,7,11]].isin([np.dtype(int), np.dtype(float)]).all() else 'invalid')
+    print('D: num',  'OK' if dfD.dtypes[[1,5,6,7,11]].isin([np.dtype('int32'), np.dtype('int64'), np.dtype(float)]).all() else 'invalid')
     print('D: obj', 'OK' if dfD.dtypes[[0,2,3,4,10]].isin([np.dtype(object)]).all() else 'invalid')
 
     checkrange(dfD, 1, 13, 85)
@@ -41,6 +41,6 @@ if __name__ == "__main__":
     checkvalues(dfD, 10, {'Q1', 'Q2', 'Q3', 'Q4'})
     print(dfD.shape, 'OK' if dfD.shape[0] > n/2 and dfD.shape[1] == 12 else 'Invalid')
   
-    print('X: int', 'OK' if dfX[0].dtypes == int else 'Invalid')
+    print('X: int', 'OK' if dfX[0].dtypes == np.dtype('int32') or dfX[0].dtypes == np.dtype('int64') else 'Invalid')  # int64 or int32
     print('X: unique', 'OK' if (dfX[0].value_counts() == 1).all() else 'Invalid')
     print(dfX.shape, 'OK' if dfX.shape[1] == 1 and dfD.shape[0] + dfX.shape[0] == n else 'Invalid')

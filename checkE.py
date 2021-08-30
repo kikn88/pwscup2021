@@ -15,7 +15,7 @@ if __name__ == "__main__":
     n = dfB.shape[0]
 
     print(dfE.shape, 'OK' if dfE.shape[0] ==  100 and dfE.shape[1] == 3 else 'Invalid')
-    print('E: int',  'OK' if dfE.dtypes.isin([np.dtype(int)]).all() else 'invalid')
+    print('E: int',  'OK' if dfE.dtypes.isin([np.dtype('int32'), np.dtype('int64')]).all() else 'invalid')
 
     print('E: max', 'OK' if (dfE.max() < n).all() else 'Invalid')
     print('E: min', 'OK' if (dfE.min() >= -1).all() else 'Invalid')
