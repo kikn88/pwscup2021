@@ -37,7 +37,21 @@ PWS Cup 2021は糖尿病罹患リスクを予測するための健康診断デ�
   | Male | 53   | White | HighSchool | Divorced | 30.8 | 0    | 1    | 0    | 0    | Q1   | 0    |
   | Male | 78   | White | HighSchool | Married  | 28.8 | 0    | 0    | 0    | 0    | Q3   | 1    |
 
-  
+- `syn.py`  データ合成
+
+  ```
+  python syn.py 入力.csv 出力.csv seed
+  ```
+
+  入力.csv ファイルの基本統計量（平均，分散共分散）を保持し，各属性のヒストグラム，2属性クロス集計を近似する合成データを出力.csvに出力する．[岡田，正木，長谷川，田中，「統計値を用いたプライバシ保護擬似データ生成手法」，CSS 2017, pp. 1366-1372, 2017] によるアルゴリズムを適用．
+  例） team02 のデータを合成する
+
+  ```
+  python syn.py Csv/B.csv Csv/B02.csv 1110
+  a83e7874d95c8c6c39b88d5130e68fdc6594bf72
+  ```
+
+  SHA1によるチェックサムが出力される．
 
 ### Statistics Analysis 
 
@@ -390,6 +404,10 @@ Aug. 17, 2021 update
 Aug. 19, 2021 update (Iloss指標)
 
 Aug. 23, 2021 update (表記の訂正)
+
+Sep. 14, 2021 update (syn.py の追加)
+
+
 
 
 
